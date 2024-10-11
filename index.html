@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uprak1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Website Pribadi Fajar</h2>
+            <p class="header-link">Sebuah catatan perjalanan hidup seorang anak kampung</p>
+        </div>
+
+        <div class="link-header">
+            <a href="#" onclick="loadContent('home.html')">Home</a>
+            <a href="#" onclick="loadContent('biodata.html')">Biodata</a>
+            <a href="#" onclick="loadContent('artikel.html')">Artikel</a>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <h3>Sosial Media</h3>
+                <nav>
+                    <ul>
+                        <li><a href="https://www.instagram.com/smkigasar.pindad?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
+                        <li><a href="#" onclick="loadContent('yt.html')">YouTube</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+        
+            <div class="content" id="content-frame">
+                <p>Blog ini berisi tentang cerita jalan-jalan fajar. Saya memang gemar berjalan-jalan. 
+                    Shopping di mall, makan di resto, hingga ber-adventure. Jadi, sekitar 90-95% tulisan 
+                    di blog ini adalah tentang traveling. Kisah jalan-jalan keluarga Hasan. 'Saya anak kampoeng'. 
+                    Cerita jalan-jalan ini awalnya ditulis di buku catatan saya. Nanti, satu per satu cerita jalan-jalan
+                     selama ini akan pindah ke blog ini. Cerita perjalanan yang akan di tulis adalah pengalaman pribadi saya. 
+                     Alamat-alamat dan no kontak penginapan, resto, dan lainnya ditulis berdasarkan yang saya dapat saat itu. 
+                     Terima saya akan update bila memang mengetahui perubahan. Tetapi bila ada perubahan kontak yang saya tidak 
+                     ketahui tentunya tidak bisa langsung tersampaikan. Jadi blog ini adalah cerita pengalaman pribadi. 
+                     Silakan mengambil blog ini. Untuk teman-teman yang ingin bertanya lebih lanjut tentang segala sesuatu yang 
+                     ada di blog ini atau juga untuk para advertiser yang ingin mengajak kerjasama, silakan email ke fajarrijkipaujan2007@gmail.com. 
+                     Salam saya, Fajar Rizqi Fauzan.
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Copyright &copy; FAJAR RIZQI</p>
+        </div>
+    </div>
+
+    <script>
+        function loadContent(page) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', page, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('content-frame').innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
